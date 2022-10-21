@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,7 +11,7 @@ public class Main {
 
         Aluno aluno = new Aluno();
 
-        Scanner ler = new Scanner(System.in); 
+        final Scanner ler = new Scanner(System.in); 
 
         String nomeAluno;
 
@@ -27,34 +26,19 @@ public class Main {
 
         List<Integer> notas = new ArrayList<>();
 
-        
-        System.out.println("Qual a primeira nota do aluno: "+aluno.getNome()+"?");
 
-        int nota1;
-
-        nota1 = ler.nextInt();
-
-        System.out.println("Qual a segunda nota do aluno: "+aluno.getNome()+"?");
-
-        int nota2;
-
-        nota2 = ler.nextInt();
-
-        System.out.println("Qual a terceira nota do aluno: "+aluno.getNome()+"?");
-
-        int nota3;
-
-        nota3 = ler.nextInt();
-
-        System.out.println("Qual a quarta nota do aluno: "+aluno.getNome()+"?");
-
-        int nota4;
-
-        nota4 = ler.nextInt();
-
-        notas.addAll(Arrays.asList(nota1,nota2,nota3,nota4));
+        for(int i = 0; i <= 3; i++){
             
-        aluno.setNota(notas);
+            System.out.println("Qual as 4 notas do aluno: "+aluno.getNome()+"?");
+
+            int nota;
+
+            nota = ler.nextInt();
+
+            notas.add(nota);
+
+            aluno.setNota(notas);
+        }
 
         System.out.println(aluno.getNota());
 
